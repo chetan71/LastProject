@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chetan Bhange's Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Import the Inter font */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+        body {
+            font-family: 'Inter', Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #202020;
+            color: #333;
+        }
+
+        header {
+            background-color: #202020;
+            color: #fff;
+            padding: 10px 20px;
+            border: 3px solid lightgoldenrodyellow;
+            border-radius: 100px;
+            position: relative;
+            z-index: 1000;
+        }
+
+        .menu-toggle {
+            display: none;
+        }
+
+        .menu-icon {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-links li {
+            margin-right: 20px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            border-radius: 100px;
+        }
+
+        .nav-links a:hover {
+            background-color: lightgoldenrodyellow;
+            color: black;
+            transform: scale(1.1); /* Scales the element to 110% of its original size */
+        }
+
+        @media (max-width: 768px) {
+            .menu-icon {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: #202020;
+                position: absolute;
+                top: 50px;
+                left: 0;
+                padding-top: 10px;
+            }
+
+            .nav-links li {
+                margin: 0;
+                border-top: 1px solid #444;
+            }
+
+            .nav-links li a {
+                padding: 10px 20px;
+                display: block;
+            }
+
+            .menu-toggle:checked + .menu-icon + .nav-links {
+                display: flex;
+            }
+        }
+
+        .contact {
+            overflow: none;
+            position: absolute;
+            right: 4px;
+            padding: 0px 15px;
+            margin-right: 20px;
+            border: 3px solid lightgoldenrodyellow;
+            border-radius: 100px;
+            
+        }
+
+        .container {
+            overflow: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            overflow: none;
+            height: fit-content;
+            background-color: #f5f5f5;
+            border-radius: 30px;
+            padding: 20px;
+            position: relative;
+        }
+
+        .card.large {
+            overflow: none;
+            grid-column: span 2;
+            height: fit-content;
+            width: fit-content;
+        }
+
+        .card-header {
+            font-size: 12px;
+            color: #999;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        h2 span {
+            font-weight: bold;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            color: #080505;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            position: relative;
+            bottom: 0px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            background-color: lightgoldenrodyellow;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            background-color: goldenrod;
+        }
+
+        .button {
+            display: inline;
+            float: right;
+            width: 10%;
+            color: #080505;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            bottom: 0px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .card.large {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <input type="checkbox" class="menu-toggle" id="menu-toggle">
+            <label for="menu-toggle" class="menu-icon">☰</label>
+            <ul class="nav-links">
+                <li><a href="#">Museo Sans</a></li>
+                <li><a href="#">Collections</a></li>
+                <li><a href="#">Our Mission</a></li>
+                <li><a href="#">Events</a></li>
+                <div class="contact">
+                    <a href="#">Contact Now</a>
+                </div>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="container">
+            <div class="card large">
+                <div class="card-header">CONGREVE STREET</div>
+                <h2>Birmingham <span>Museums.</span></h2>
+                <img src="https://s3-alpha-sig.figma.com/img/dd77/b915/9bd218bf2e2ad3b90da9abce140d1ba8?Expires=1723420800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=GDOC1j4ovFr1tW2rpyhm00wL8PxQb2Eew9IIKiPL4Dv~FJm5IvqqcuFOUtrQ9dz~LfjlMoK4v9D9DgR1hdlopGL-DlowtrLcms8occR0IpCurJYYUO-QS3W9WZaEg7prB1g7ElIDmWOBPhX1r9wkg7TomI2Uc7W8YCkUmNC8vRwzYfFMYbWsf3uyRpu~-yMHscrBLLoJSN9DfjyidCwvm57oo55sDZZnoTZxcku8LlBJj22NkJGM-KlJrSpB~f45DzabcC65ru-7GxcWzSlsnP7MFkpzLn63XKK0uQiWwv9i1fbO1a~P6zZsv4CAM3QOqaydnoOYPQsA0UOC888S3g__"
+                    alt="Birmingham Museums">
+                <button class="cta-button">Get Started</button>
+            </div>
+            <div class="card medium">
+                <div class="card-header">EUROPEANA</div>
+                <h2>A Woman Slicing <span>Bread.</span></h2>
+                <p>Date: 1800. Institution: Rijksmuseum. Provider: Rijksmuseum. Providing country: Netherlands. Public domain. Photo by Europeana.</p>
+                <img src="https://s3-alpha-sig.figma.com/img/7a05/7321/02ecc2f34052f178793eda90e3be1bd3?Expires=1723420800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Diq1DQCJK0MqI~dLULNwAFkHjklqtqYlhWFflb0Iw9D8zEce~dZ1zWZLNtawoszOuJRyoH~FeetpNBREw0hK3LIK1v5JyqOe2cG0XPiGSBSBxuUUwL0Zk~or0~~~TKR6b~n896SDDG9RUrPCKLfp9i2iITosj1pxO6yUTny9eOojtuEK9a1iDKpmNbeL6AGxSp24rxDzQdW4Eg44L47SSoNCLL4jz67E-jIpYCzduUOWcB-LM3XTnbygbnTwQj4NaWd~UV11dHwGczpWB5oBoFqNs5BlHtZ~rlKqHbhud9jAiR5B-7EPuMplmBJyyCl8ZaDFUAPD88pM5Qac6E-5A__"
+                    alt="A Woman Slicing Bread">
+                <button class="cta-button">Get Started</button>
+            </div>
+            <div class="card medium">
+                <h2>Portrait</h2>
+                <p>Portrait of Marige Claesdr Vooght. Date: 1639. Institution: Rijksmuseum. Provider: Rijksmuseum. Providing country: Netherlands. Public domain.</p>
+                <img src="https://s3-alpha-sig.figma.com/img/bcfd/ff4d/3ab4aa39f45b58c07736be0cbdee0039?Expires=1723420800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=HLu66bBxXgbUHDyYNqQtKMP7S1tyvDkdCfsbEZSIeQdGwv1cltOhsujPPvU9tFQsIQKuQaiWL5tVL59h-blp6OK4PLlD-ZTXE8MzNfGIWzwWxsSUIc~ElzDoRgf~YBK6xDtKL5c6~mybuLFuT-3g4LoFQ3BqspDgFm3n4gsESe~Sct1z8dUvI32doOU1qKTdn753NU~o0p7GcwTk2QODQSLC82UGGFcJrAHQgtXl~sJ5YmS6Ud9Xe8MhfT6--vsHF8hlfcrz0zQffTSVDDWupH6jWTVVUi2eKDbR8vNPRFL5uJxEsZZARtQyjUuP0pukEBxnskvKtDW3I~zYDqTjlA__"
+                    alt="Portrait">
+                <button class="cta-button">Get Started</button>
+            </div>
+            <div class="card small">
+                <div class="card-header">EUROPEANA</div>
+                <img src="https://s3-alpha-sig.figma.com/img/7926/ae8d/c1102600cf253f254f2bd57b7b254745?Expires=1723420800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=DyqFF2bk96Xhmrsn6M0c4PLGFDuzaisgWwwNVuCE36alx26iJPut8-uSkNwyMA~8LdOm-gWGCIiKIs17op0Nkwd0VGCijryfwH8ugpSCji644O6LvVB6S6-G8ORMnEPUvpGz03s9I9wM8E7wayCbVocBqiHeKdMWde2jZrjpocGQAKcYjoxuSnEj74Ef5o-inO6DRFTYTlyvhKDpQYEx6GzxZEU0vHJR2AaBiUajmSMUfTiVfQhdxNFibXo4zuFBg2MtiLXMT-qH3Dm~DQNHaw89Zp3pmjCOuHQA4eqRgpKotDzg4lEppXPKBkP4oIUAUykMGZKIC9QR~bOkAo~PWA__"
+                    alt="Vintage Painting">
+                <h2>Vintage <span>Painting.</span></h2>
+                <p>Portrait of a man. Date: 1648. Institution: Rijksmuseum. Provider: Rijksmuseum. Providing country: Netherlands. Public domain.</p>
+                <button class="cta-button">Get Started</button>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
